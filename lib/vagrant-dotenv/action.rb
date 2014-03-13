@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'vagrant/action/builtin/call'
-require_relative 'action/is_enabled'
-require_relative 'action/load_environment'
+require 'vagrant-dotenv/action/is_enabled'
+require 'vagrant-dotenv/action/load_environment'
 
 module VagrantPlugins
   module Dotenv

@@ -1,6 +1,6 @@
 # coding: utf-8
 $:.unshift(File.expand_path('../lib', __FILE__))
-require 'vagrant-dotenv'
+require 'vagrant-dotenv/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'vagrant-dotenv'

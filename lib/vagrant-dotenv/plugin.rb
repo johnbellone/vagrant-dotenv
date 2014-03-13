@@ -9,12 +9,12 @@ module VagrantPlugins
       description ''
 
       config 'dotenv' do
-        require_relative 'config'
+        require 'vagrant-dotenv/config'
         Config
       end
 
       action_hook 'dotenv_configure', :environment_load do |hook|
-        require_relative 'action'
+        require 'vagrant-dotenv/action'
         hook.before Action.configure
       end
     end
