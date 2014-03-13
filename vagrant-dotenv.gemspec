@@ -10,6 +10,8 @@ Gem::Specification.new do |spec|
   spec.summary = spec.description
   spec.homepage = 'https://github.com/johnbellone/vagrant-dotenv'
   spec.license = 'Apache 2.0'
+  spec.cert_chain    = ['certs/jbellone.pem']
+  spec.signing_key   = File.join(Dir.home, '.config/gem-private_key.pem') if $0 =~ /gem\z/
   
   spec.files = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
