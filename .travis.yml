@@ -1,0 +1,13 @@
+---
+language: ruby
+script: rake test
+branches:
+  only:
+    - master
+rvm:
+  - 2.1.0
+  - 2.0.0
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+  
