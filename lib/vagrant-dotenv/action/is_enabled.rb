@@ -1,7 +1,7 @@
 # coding: utf-8
 module VagrantPlugins
   module Dotenv
-    class IsEnabled
+    class Action::IsEnabled
       def initialize(app, env)
         @app = app
       end

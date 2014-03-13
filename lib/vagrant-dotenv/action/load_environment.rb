@@ -1,7 +1,7 @@
 # coding: utf-8
 module VagrantPlugins
   module Dotenv
-    class LoadEnvironment
+    class Action::LoadEnvironment
       def initialize(app, env)
         @app = app
       end
