@@ -2,7 +2,8 @@
 [![Gem Version](https://badge.fury.io/rb/vagrant-dotenv.png)](http://badge.fury.io/rb/vagrant-dotenv)
 [![Build Status](https://travis-ci.org/johnbellone/vagrant-dotenv.png?branch=master)](https://travis-ci.org/johnbellone/vagrant-dotenv)
 [![Dependency Status](https://gemnasium.com/johnbellone/vagrant-dotenv.png)](https://gemnasium.com/johnbellone/vagrant-dotenv)
-[![Code Climate](https://codeclimate.com/github/johnbellone/vagrant-dotenv.png)](https://codeclimate.com/johnbellone/vagrant-berkshelf)
+[![Code Climate](https://codeclimate.com/github/johnbellone/vagrant-dotenv.png)](https://codeclimate.com/github/johnbellone/vagrant-dotenv)
+[![Coverage Status](https://coveralls.io/repos/johnbellone/vagrant-dotenv/badge.png)](https://coveralls.io/r/johnbellone/vagrant-dotenv)
 
 ## Installation
 
