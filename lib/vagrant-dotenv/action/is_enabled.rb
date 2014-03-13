@@ -14,7 +14,7 @@ module VagrantPlugins
       private
 
       def plugin_enabled?(config)
-        config.enabled and config.enabled != ''
+        config.enabled && config.enabled != ''
       end
     end
   end
