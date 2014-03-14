@@ -5,24 +5,22 @@ module VagrantPlugins
     #
     # @!parse class Config < Vagrant::Plugin::V2::Config; end
     class Config < Vagrant.plugin('2', :config)
-      # Defines the mode of the plugin.
-      # @return [Boolean] 
-      key :enabled, env_var: 'VAGRANT_DOTENV'
-
-      # @return [Array]
-      key :load_files
-
-      # @return [Array]
-      key :overload_files
+      attr_accessor :enabled
+      attr_accessor :load_files
+      attr_accessor :overload_files
 
       def initialize
+        super
+
         @enabled = UNSET_VALUE
         @load_files = UNSET_VALUE
         @overload_files = UNSET_VALUE
       end
 
       def finalize!
-        @enabled = false if @enabled == UNSET_VALUE
+        super
+        
+        @enabled = ENV.fetch('VAGRANT_DOTENV', false) if @enabled == UNSET_VALUE
         @load_files = nil if @load_files == UNSET_VALUE
         @overload_files = nil if @load_files == UNSET_VALUE
       end
