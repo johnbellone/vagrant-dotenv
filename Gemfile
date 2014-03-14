@@ -6,17 +6,16 @@ gemspec
 
 gem 'coveralls', require: false
 gem 'rake'
-gem 'minitest'
+gem 'rspec', '~> 2.11'
 gem 'tailor', '~> 1.4'
 gem 'cane', '~> 2.6'
 
+gem 'vagrant', git: 'https://github.com/mitchellh/vagrant',
+  ref: ENV.fetch('VAGRANT_VERSION', 'v1.5.0')
+
 group :development do
   gem 'guard-minitest'
-end
-
-group :integration do
-  gem 'vagrant', git: 'https://github.com/mitchellh/vagrant',
-    ref: ENV.fetch('VAGRANT_VERSION', 'v1.5.0')
+  gem 'yard'
 end
 
 

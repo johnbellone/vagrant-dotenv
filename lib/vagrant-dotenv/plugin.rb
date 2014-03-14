@@ -1,4 +1,7 @@
 # coding: utf-8
+require 'vagrant-dotenv/action'
+require 'vagrant-dotenv/config'
+
 module VagrantPlugins
   module Dotenv
     class Plugin < Vagrant.plugin('2')
@@ -9,12 +12,10 @@ module VagrantPlugins
       description ''
 
       config 'dotenv' do
-        require 'vagrant-dotenv/config'
         Config
       end
 
       action_hook 'dotenv_configure', :environment_load do |hook|
-        require 'vagrant-dotenv/action'
         hook.prepend Action.configure
       end
     end

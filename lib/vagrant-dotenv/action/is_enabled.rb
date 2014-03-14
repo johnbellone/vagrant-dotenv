@@ -6,16 +6,16 @@ module VagrantPlugins
         def initialize(app, env)
           @app = app
         end
-
+ 
         def call(env)
-          env[:result] = plugin_enabled?(env[:machine].config.proxy)
+          env[:result] = plugin_enabled?(env[:machine].config)
           @app.call(env)
         end
 
         private
-        
+
         def plugin_enabled?(config)
-          config.enabled && config.enabled != ''
+          config.dotenv.enabled && config.dotenv.enabled != ''
         end
       end
     end
