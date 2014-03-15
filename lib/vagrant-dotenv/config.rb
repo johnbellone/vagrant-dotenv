@@ -21,8 +21,16 @@ module VagrantPlugins
         super
         
         @enabled = ENV.fetch('VAGRANT_DOTENV', false) if @enabled == UNSET_VALUE
-        @load_files = nil if @load_files == UNSET_VALUE
-        @overload_files = nil if @load_files == UNSET_VALUE
+        @load_files = [] if @load_files == UNSET_VALUE
+        @overload_files = [] if @load_files == UNSET_VALUE
+
+        unless @load_files.kind_of?(Array)
+          @load_files = [ @load_files.to_s ]
+        end
+
+        unless @overload_files.kind_of?(Array)
+          @overload_files = [ @overload_files.to_s ]          
+        end
       end
     end
   end
