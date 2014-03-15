@@ -10,12 +10,12 @@ module VagrantPlugins
         def call(env)
           config = env[:machine].config.dotenv
 
-          if config.load_files
-            Dotenv.load(config.load_files)
-          else
-            Dotenv.load(env.root_path.join('.env'))
-            Dotenv.load(env.user_path.join('.env'))
+          if config.load_files.length == 0
+            config.load_files << env.root_path.join('.env')
+            config.load_files << env.user_path.join('.env')
           end
+
+          Dotenv.load(config.load_files)
 
           @app.call(env)
         end
