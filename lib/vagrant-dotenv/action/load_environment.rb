@@ -1,6 +1,8 @@
 # coding: utf-8
+require 'log4r'
+
 module VagrantPlugins
-  module Dotenv
+  module VagrantDotenv
     module Action
       class LoadEnvironment 
         def initialize(app, env)
@@ -8,11 +10,12 @@ module VagrantPlugins
         end
 
         def call(env)
-          config = env[:machine].config.dotenv
+          config = env[:global_config].fetch(:dotenv)
 
+          # Only load default files if there were none specified.
           if config.load_files.length == 0
+            config.load_files << env.home_path.join('.env') 
             config.load_files << env.root_path.join('.env')
-            config.load_files << env.user_path.join('.env')
           end
 
           Dotenv.load(config.load_files)

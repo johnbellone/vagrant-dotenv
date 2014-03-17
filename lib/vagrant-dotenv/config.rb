@@ -1,6 +1,6 @@
 # coding: utf-8
 module VagrantPlugins
-  module Dotenv
+  module VagrantDotenv
     # Default onfiguration for the dotenv configuration.
     #
     # @!parse class Config < Vagrant::Plugin::V2::Config; end

@@ -4,10 +4,10 @@ require 'vagrant-dotenv/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'vagrant-dotenv'
-  spec.version = VagrantPlugins::Dotenv::VERSION
+  spec.version = VagrantPlugins::VagrantDotenv::VERSION
   spec.authors = ['John Bellone']
   spec.email = ['jbellone@bloomberg.net']
-  spec.description = 'A Vagrant plugin which configures environment variables.'
+  spec.description = 'A Vagrant plugin which configures environment variables using Dotenv.'
   spec.summary = spec.description
   spec.homepage = 'https://github.com/johnbellone/vagrant-dotenv'
   spec.license = 'Apache 2.0'

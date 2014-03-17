@@ -1,6 +1,8 @@
 # coding: utf-8
+require 'log4r'
+
 module VagrantPlugins
-  module Dotenv
+  module VagrantDotenv
     module Action
       class OverloadEnvironment 
         def initialize(app, env)
@@ -8,8 +10,7 @@ module VagrantPlugins
         end
 
         def call(env)
-          config = env[:machine].config.dotenv
-
+          config = env[:global_config].fetch(:dotenv)
           Dotenv.overload(config.overload_files) if config.overload_files
           @app.call(env)
         end

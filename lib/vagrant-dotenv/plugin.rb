@@ -3,13 +3,13 @@ require 'vagrant-dotenv/action'
 require 'vagrant-dotenv/config'
 
 module VagrantPlugins
-  module Dotenv
+  module VagrantDotenv
     class Plugin < Vagrant.plugin('2')
       # Compatible Vagrant versions.
       VAGRANT_VERSION_REQUIREMENT = '>= 1.5.0'
 
       name 'vagrant-dotenv'
-      description ''
+      description 'Load environment variables using dotenv.'
 
       config 'dotenv' do
         Config

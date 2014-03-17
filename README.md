@@ -8,7 +8,7 @@
 ## Installation
 
 ```bash
-vagraint plugin install vagrant-dotenv
+vagrant plugin install vagrant-dotenv
 ```
 
 ## Usage

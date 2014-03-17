@@ -1,8 +1,11 @@
 # coding: utf-8
 module VagrantPlugins
-  module Dotenv
+  module VagrantDotenv
+    # Middleware builders for Dotenv plugin actions.
     module Action
-      def self.configure(opts = {})
+      # Returns an action middleware stack which configures the instance
+      # if the dotenv plugin has been enabled.
+      def self.configure
         Vagrant::Action::Builder.new.tap do |b|
           b.use Vagrant::Action::Builtin::Call, IsEnabled do |env, b1|
             next unless env[:result]
