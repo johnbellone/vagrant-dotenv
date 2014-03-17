@@ -10,15 +10,17 @@ module VagrantPlugins
         end
 
         def call(env)
-          config = env[:global_config].fetch(:dotenv)
+          config = env.fetch(:global_config).dotenv
+          home_path = env.fetch(:home_path)
+          root_path = env.fetch(:root_path)
 
           # Only load default files if there were none specified.
           if config.load_files.length == 0
-            config.load_files << env.home_path.join('.env') 
-            config.load_files << env.root_path.join('.env')
+            config.load_files << File.join(home_path, '.env')
+            config.load_files << File.join(root_path, '.env')
           end
 
-          Dotenv.load(config.load_files)
+          Dotenv.load(*config.load_files)
 
           @app.call(env)
         end

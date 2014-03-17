@@ -10,8 +10,12 @@ module VagrantPlugins
         end
 
         def call(env)
-          config = env[:global_config].fetch(:dotenv)
-          Dotenv.overload(config.overload_files) if config.overload_files
+          config = env[:global_config].dotenv
+
+          if config.overload_files.length > 0
+            Dotenv.overload(*config.overload_files)
+          end
+
           @app.call(env)
         end
       end      

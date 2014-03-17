@@ -16,6 +16,7 @@ test/tmp
 test/version_tmp
 .bin/
 tmp/
-bundle/
+.bundle/
 vendor/
 bin/
+.vagrant/
