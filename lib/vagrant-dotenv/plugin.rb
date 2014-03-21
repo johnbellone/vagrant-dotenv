@@ -15,8 +15,8 @@ module VagrantPlugins
         Config
       end
 
-      action_hook 'dotenv_configure', :environment_load do |hook|
-        hook.prepend Action.configure
+      action_hook 'dotenv_configure', :environment_plugins_loaded do |h|
+        h.prepend Action.configure
       end
     end
   end

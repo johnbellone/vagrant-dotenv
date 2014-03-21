@@ -19,8 +19,4 @@ group :development, :test do
     ref: ENV.fetch('VAGRANT_VERSION', 'v1.5.0')
 end
 
-group :plugins do
-  gem 'vagrant-dotenv', path: '.'
-end
-
 
