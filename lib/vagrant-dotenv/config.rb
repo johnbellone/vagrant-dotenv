@@ -24,13 +24,8 @@ module VagrantPlugins
         @load_files = [] if @load_files == UNSET_VALUE
         @overload_files = [] if @load_files == UNSET_VALUE
 
-        unless @load_files.kind_of?(Array)
-          @load_files = [ @load_files.to_s ]
-        end
-
-        unless @overload_files.kind_of?(Array)
-          @overload_files = [ @overload_files.to_s ]          
-        end
+        @load_files = [ @load_files ].flatten.map(&:to_s) 
+        @overload_files = [ @overload_files ].flatten.map(&:to_s)
       end
     end
   end
